@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shikbo AI - Student Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="bg-blue-100 font-sans">
+
+  <div class="flex min-h-screen">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-blue-200 shadow-md p-6 hidden md:block">
+      <div class="flex items-center justify-between">
+        <a href="#" class="inline-flex items-center gap-3">
+          <img src="./Shikbo.AI.png" alt="Shikbo.ai Logo" class="h-10 w-auto rounded-md" />
+        </a>
+      </div>
+
+      <nav class="space-y-1 mt-6">
+        <a href="#" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-gray-100">
+          <span class="text-lg">📊</span>
+          <span class="font-medium">Dashboard</span>
+        </a>
+
+        <button class="flex items-center w-full text-black hover:text-indigo-600 px-3 py-2 rounded">
+          <span class="material-icons mr-3">school</span> My Courses
+        </button>
+
+        <button class="flex items-center w-full text-black hover:text-indigo-600 px-3 py-2 rounded">
+          <span class="material-icons mr-3">quiz</span> Quizzes
+        </button>
+
+        <button class="flex items-center w-full text-black hover:text-indigo-600 px-3 py-2 rounded">
+          <span class="material-icons mr-3">event</span> Live Sessions
+        </button>
+
+        <button class="flex items-center w-full text-black hover:text-indigo-600 px-3 py-2 rounded">
+          <span class="material-icons mr-3">leaderboard</span> Leaderboard
+        </button>
+
+        <button class="flex items-center w-full text-black hover:text-indigo-600 px-3 py-2 rounded">
+          <span class="material-icons mr-3">forum</span> Community
+        </button>
+
+        <button class="flex items-center w-full text-black hover:text-indigo-600 px-3 py-2 rounded">
+          <span class="material-icons mr-3">settings</span> Settings
+        </button>
+
+        <button class="flex items-center w-full text-white bg-red-500 hover:bg-red-600 p-2 rounded mt-6">
+          <span class="material-icons mr-3">logout</span> Logout
+        </button>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6">
+
+      <!-- Header -->
+      <header class="flex justify-between items-center mb-8">
+        <h1 class="text-3xl font-bold text-gray-800">Welcome back, Bob!</h1>
+        <div class="flex items-center space-x-4">
+
+          <div class="flex items-center gap-4 bg-white shadow-md px-4 py-1 rounded-full">
+        <div class="text-right">
+          <p class="font-semibold">Student Profile</p>
+        </div>
+        <img src="https://api.dicebear.com/6.x/initials/svg?seed=SP" class="w-10 h-10 rounded-full" />
+      </div>
+        </div>
+      </header>
+
+      <!-- Top Stats -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+        <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 shadow rounded-xl p-6 hover:shadow-lg transition">
+          <h3 class="text-white text-lg font-semi-bold mb-1">Courses Enrolled</h3>
+          <p class="text-3xl font-bold text-white">5</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-green-500 to-green-600 shadow rounded-xl p-6 hover:shadow-lg transition">
+          <h3 class="text-white text-lg font-semi-bold mb-1">Lessons Completed</h3>
+          <p class="text-3xl font-bold text-white">23</p>
+        </div>
+
+        <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 shadow rounded-xl p-6 hover:shadow-lg transition">
+          <h3 class="text-white text-lg font-semibold mb-1">XP Earned</h3>
+          <p class="text-3xl font-bold text-white">1,250</p>
+        </div>
+      </div>
+
+      <!-- Recommended Courses -->
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Recommended Courses</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden transition">
+            <img src="./download.jpeg" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <p class="text-green-500 font-semibold">Web Development</p>
+              <h3 class="font-bold text-lg text-gray-800">Complete Web Development with React</h3>
+              <p class="text-black text-sm mb-4">Learn React with hands-on projects.</p><br>
+              <div class="flex justify-between items-center">
+                <span class="text-indigo-600 font-bold">৳12,500</span>
+                <span class="text-indigo-600 font-bold cursor-pointer">Enroll</span>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden transition">
+            <img src="./Data-Analysis-With-Python.svg" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <p class="text-green-500 font-semibold">AI & ML</p>
+              <h3 class="font-bold text-lg text-gray-800">Machine Learning Fundamentals</h3>
+              <p class="text-black text-sm mb-4">Learn ML algorithms with Python. Real-world projects included.</p>
+              <div class="flex justify-between items-center">
+                <span class="text-indigo-600 font-bold">৳13,500</span>
+                <span class="text-indigo-600 font-bold cursor-pointer">Enroll</span>
+              </div>
+            </div>
+          </div>
+          
+
+          
+          <div class="bg-white rounded-2xl shadow hover:shadow-xl overflow-hidden transition">
+            <img src="./images.jpeg" class="w-full h-40 object-cover">
+            <div class="p-4">
+              <p class="text-green-500 font-semibold">Data Science</p>
+              <h3 class="font-bold text-lg text-gray-800">Data Science with Python</h3>
+              <p class="text-black text-sm mb-4">Real-world Data Visulization Project.</p><br>
+              <div class="flex justify-between items-center">
+                <span class="text-indigo-600 font-bold">৳12,000</span>
+                <span class="text-indigo-600 font-bold cursor-pointer">Enroll</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Upcoming Live Classes -->
+      <section class="mb-6">
+        <h2 class="text-2xl font-bold text-black mb-4">Upcoming Live Classes</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col hover:shadow-xl transition">
+            <h3 class="font-bold text-gray-800 mb-2">React Live Class</h3>
+            <p class="text-sm text-black mb-1">Instructor: John Doe</p>
+            <p class="text-sm text-black mb-4">Starts: 16 Nov, 4 PM</p>
+            <button class="bg-green-500 text-white py-2 rounded">Join Class</button>
+          </div>
+
+          <div class="bg-white shadow rounded-xl p-4 flex flex-col hover:shadow-xl transition">
+            <h3 class="font-bold text-gray-800 mb-2">Machine Learning Live</h3>
+            <p class="text-sm text-black mb-1">Instructor: Jane Smith</p>
+            <p class="text-sm text-black mb-4">Starts: 17 Nov, 5 PM</p>
+            <button class="bg-green-500 text-white py-2 rounded">Join Class</button>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+</body>
+</html>

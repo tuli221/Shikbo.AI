@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head >
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shikhbo AI - Learn Smart with AI</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom color variables -->
+  <style>
+    :root {
+      --primary: #6C63FF;
+      --secondary: #0ea5e9;
+    }
+
+    /* ✅ Background image style */
+  </style>
+</head>
+
+<body class="text-gray-800 font-sans bg-gradient-to-r from-emerald-950 via-emerald-950 to-emerald-950">
+
+  <!-- ================================
+       🔹 NAVBAR SECTION
+       ================================= -->
+  <nav class="flex justify-between items-center px-8 py-5 bg-white/80 shadow-md sticky top-0 z-50 backdrop-blur-sm">
+  <!-- left: logo -->
+  <div class="flex items-center gap-4">
+    <a href="#" class="inline-block">
+      <img src="Shikbo.AI.png" alt="Shikhbo.AI Logo" class="h-10 w-auto">
+    </a>
+
+    <!-- search: visible on md+ screens -->
+    <form action="#" method="get" role="search"
+          class="hidden md:flex items-center justify-between bg-white/90 rounded-lg shadow w-96 ml-20">
+      <label for="site-search" class="sr-only">Search</label>
+      <input id="site-search" name="q" type="search"
+             placeholder="Search courses, instructors..."
+             class="w-64 px-3 py-2 text-sm text-gray-700 bg-transparent outline-none" />
+    
+         <button type="submit" class=" text-white bg-[var(--primary)] hover:bg-[var(--secondary)] px-3 py-2 rounded-md">
+        <i class="fa-solid fa-magnifying-glass"></i>
+     </div>
+    </form>
+
+    <!-- mobile search icon (optional) -->
+    <button class="md:hidden ml-2 p-2 rounded-md bg-white/90" aria-label="Open search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
+  </div>
+
+  <!-- right: nav links -->
+  <ul class="md:flex space-x-6 font-medium items-center">
+     <li><a href="#" class="hover:text-[var(--secondary)]">Home</a></li>
+    <li><a href="#" class="hover:text-[var(--secondary)]">Courses</a></li>
+    <li><a href="#" class="hover:text-[var(--secondary)]">Learning center</a></li>
+    <li><a href="#" class="hover:text-[var(--secondary)]">Instructors</a></li>
+    <li><a href="#" class="hover:text-[var(--secondary)]">Leaderboard</a></li>
+    <a href="#" class="bg-[var(--primary)] text-white px-4 py-2 rounded-lg hover:bg-[var(--secondary)] transition">
+      Log in/Registration
+    </a>
+  </ul>
+</nav>
+

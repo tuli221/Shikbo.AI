@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art & Unique - Handcrafted Bangles & Accessories</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #A52A2A; /* Rich Maroon/Deep Red */
+            --accent-color: #FFD700; /* Gold */
+        }
+        .font-inter {
+            font-family: 'Inter', sans-serif;
+        }
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #8B1A1A; /* Darker Maroon */
+            box-shadow: 0 4px 15px rgba(165, 42, 42, 0.4);
+        }
+        .text-accent {
+            color: var(--accent-color);
+        }
+        .bg-primary-light {
+            background-color: #FEF3F2; /* Very light pink/cream */
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="font-inter bg-white text-gray-800 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="shadow-md sticky top-0 z-50 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo Image in Header -->
+            <a href="#" class="h-10 flex items-center">
+                <img src='./download (2).png'
+                     class="h-16 w-auto mb-4">
+            </a>
+            <nav class="hidden md:flex space-x-8 text-lg font-medium">
+                <a href="#featured" class="hover:text-amber-600 transition duration-150">Shop</a>
+                <a href="#story" class="hover:text-amber-600 transition duration-150">Our Story</a>
+                <a href="#contact" class="hover:text-amber-600 transition duration-150">Contact</a>
+            </nav>
+            <button id="menu-button" class="md:hidden p-2 rounded-lg" style="color: var(--primary-color);">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#featured" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Shop</a>
+                <a href="#story" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Our Story</a>
+                <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section class="relative bg-primary-light h-[50vh] sm:h-[70vh] flex items-center justify-center overflow-hidden">
+            <!-- Background pattern for visual richness -->
+            
+            <div class="relative z-10 text-center px-4">
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4" style="color: var(--primary-color);">
+                    The Art of the Bangle
+                </h1>
+                <p class="text-xl sm:text-2xl text-gray-600 mb-8 max-w-xl mx-auto">
+                    Handcrafted jewelry that tells a story of tradition and elegance.
+                </p>
+                <a href="#featured" class="inline-block px-8 py-3 text-lg font-semibold text-white rounded-full shadow-lg btn-primary hover:scale-105 transition transform duration-300">
+                    Explore Collections
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Products Section -->
+        <section id="featured" class="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-4xl font-bold text-center mb-12 sm:mb-16" style="color: var(--primary-color);">Featured Bangles</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/FFD700/A52A2A?text=Bridal+Set" onerror="this.onerror=null;this.src='https://placehold.co/600x400/FFD700/A52A2A?text=Bridal+Bangle+Set';" alt="Bridal Bangle Set" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--primary-color);">The Bridal Crimson</h3>
+                        <p class="text-gray-500 mb-4">Glass & Crystal</p>
+                        <p class="text-3xl font-bold text-amber-600 mb-4">₹ 4,999</p>
+                        <button class="w-full py-2 text-white font-medium rounded-lg btn-primary">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/90EE90/A52A2A?text=Emerald+Churi" onerror="this.onerror=null;this.src='https://placehold.co/600x400/90EE90/A52A2A?text=Emerald+Churi';" alt="Emerald Green Churi" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--primary-color);">Emerald Majesty</h3>
+                        <p class="text-gray-500 mb-4">Metal & Stone Work</p>
+                        <p class="text-3xl font-bold text-amber-600 mb-4">₹ 2,450</p>
+                        <button class="w-full py-2 text-white font-medium rounded-lg btn-primary">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden group hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                    <img src="https://placehold.co/600x400/ADD8E6/A52A2A?text=Kundan+Kada" onerror="this.onerror=null;this.src='https://placehold.co/600x400/ADD8E6/A52A2A?text=Kundan+Kada';" alt="Kundan Kada" class="w-full h-64 object-cover">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-semibold mb-2" style="color: var(--primary-color);">The Royal Kundan</h3>
+                        <p class="text-gray-500 mb-4">Traditional Kada</p>
+                        <p class="text-3xl font-bold text-amber-600 mb-4">₹ 1,800</p>
+                        <button class="w-full py-2 text-white font-medium rounded-lg btn-primary">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-block px-10 py-3 text-lg font-semibold border-2 border-current rounded-full transition transform duration-300 hover:bg-gray-50" style="color: var(--primary-color);">
+                    View All Collections &rarr;
+                </a>
+            </div>
+        </section>
+
+        <!-- Our Story/Craftsmanship Section -->
+        <section id="story" class="bg-primary-light py-16 md:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h2 class="section-title text-4xl font-bold mb-6" style="color: var(--primary-color);">Our Craftsmanship</h2>
+                        <p class="text-lg text-gray-600 mb-6">
+                            For generations, the art of **Churi-making** has been passed down in our family. We believe a bangle is more than just an accessory—it's a celebration of heritage, joy, and femininity.
+                        </p>
+                        <p class="text-lg text-gray-600 mb-6">
+                            Each piece is meticulously crafted by hand, using the finest materials, from pure lac and dazzling glass to intricate metalwork and sparkling Kundan stones. We blend **age-old techniques with modern designs** to create timeless pieces for every occasion.
+                        </p>
+                        <p class="text-xl font-semibold italic" style="color: var(--primary-color);">
+                            "Where tradition meets trend, on your wrist."
+                        </p>
+                    </div>
+                    <div class="order-1 lg:order-2 rounded-xl shadow-2xl overflow-hidden">
+                        <img src="https://placehold.co/700x500/A52A2A/FFD700?text=Bangle+Craftsmanship" onerror="this.onerror=null;this.src='https://placehold.co/700x500/A52A2A/FFD700?text=Artisanal+Bangle+Crafting';" alt="Artisan working on bangles" class="w-full h-auto object-cover transform hover:scale-[1.03] transition duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contact Section -->
+    <footer id="contact" class="bg-gray-800 text-white py-12 md:py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Brand Info -->
+                <div>
+                    <!-- Logo Image in Footer -->
+                    <img src="uploaded:Screenshot 2025-11-13 001951.png-eaede48e-d947-4094-9d11-91fee769af03" 
+                         alt="Art & Unique Bangle Business Logo" 
+                         class="h-10 w-auto mb-4">
+                    <p class="text-gray-400 text-sm">Dedicated to bringing authentic, high-quality handcrafted bangles to the world.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#featured" class="text-gray-400 hover:text-white transition duration-150">Shop</a></li>
+                        <li><a href="#story" class="text-gray-400 hover:text-white transition duration-150">Our Story</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition duration-150">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">Get in Touch</h4>
+                    <p class="text-gray-400 mb-2">Email: info@artunique.com</p>
+                    <p class="text-gray-400">Phone: +91 98765 43210</p>
+                </div>
+
+                <!-- Newsletter/Social -->
+                <div>
+                    <h4 class="text-xl font-semibold mb-4 border-b border-gray-700 pb-2">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <!-- Placeholder Icons (Replace with actual social links) -->
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-150">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.237 3.09 7.765 7.154 8.783v-6.19h-2.11v-2.593h2.11V10.1c0-2.094 1.258-3.66 3.553-3.66 1.018 0 2.158.18 2.158.18v2.365h-1.218c-1.02 0-1.353.633-1.353 1.296v1.547h2.597l-.419 2.593h-2.178v6.19C18.91 19.765 22 16.237 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition duration-150">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 10h1.5v7H7zm3-2h1.5v9H10zm3 1h1.5v8H13z"/><path d="M19 3H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h14c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zm0 2v3H5V5h14zM5 19v-9h14.001l.001 9H5z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-gray-700 text-center text-sm text-gray-500">
+                &copy; 2025 Art & Unique. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple JS for Mobile Menu Toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shikbo.ai - Admin Dashboard</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    ::-webkit-scrollbar { width: 7px; }
+    ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
+  </style>
+</head>
+<body class="bg-blue-100 text-black">
+
+<div class="min-h-screen flex">
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="w-72 bg-blue-200 border-r shadow-lg p-6 space-y-6 fixed md:static inset-y-0 left-0 z-20 transform -translate-x-full md:translate-x-0 transition-all duration-300">
+
+    <!-- Logo -->
+    <div class="flex items-center justify-between">
+      <a class="flex items-center gap-3">
+        <img src="./Shikbo.AI.png" class="h-10 rounded-md" />
+      </a>
+      <button id="collapseBtn" class="md:hidden text-gray-600 text-2xl">✖</button>
+    </div>
+
+    <!-- Nav Links -->
+    <nav class="space-y-1 text-black font-medium ">
+      <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition"><span>📊</span>Dashboard</a>
+      <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition"><span>👥</span>Users</a>
+      <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition"><span>👩‍🏫</span>Instructors</a>
+      <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition"><span>📚</span>Courses</a>
+      <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition"><span>💳</span>Payments</a>
+      <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition"><span>📈</span>Analytics</a>
+    </nav>
+
+    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg py-2 transition" id="addCourseBtn">+ Add Course</button>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 gap-2 p-6 md:p-10 ml-0 md:ml-6 transition-all duration-300">
+
+    <!-- TOP BAR -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-4">
+        <button id="openSidebarBtn" class="md:hidden bg-white p-2 rounded-lg shadow">☰</button>
+        <h2 class="text-3xl font-extrabold text-gray-800">Admin Dashboard</h2>
+      </div>
+
+      <div class="flex items-center gap-4 bg-white shadow-md px-4 py-1 rounded-full">
+        <div class="text-right">
+          <p class="font-semibold">Shikbo Admin</p>
+        </div>
+        <img src="https://api.dicebear.com/6.x/initials/svg?seed=SA" class="w-10 h-10 rounded-full" />
+      </div>
+    </div>
+
+    <!-- STATS CARDS -->
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+      <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
+        <div>
+          <p class="text-sm opacity-80">Active Students</p>
+          <h3 class="text-3xl font-bold">5,432</h3>
+        </div>
+        <div class="text-4xl opacity-80">👥</div>
+      </div>
+
+      <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
+        <div>
+          <p class="text-sm opacity-80">Courses</p>
+          <h3 class="text-3xl font-bold">12</h3>
+        </div>
+        <div class="text-4xl opacity-80">📚</div>
+      </div>
+
+      <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
+        <div>
+          <p class="text-sm opacity-80">This Month Earnings</p>
+          <h3 class="text-3xl font-bold">৳380,000</h3>
+        </div>
+        <div class="text-4xl opacity-80">💳</div>
+      </div>
+    </section>
+
+    <!-- MAIN GRID -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- LEFT CONTENT -->
+      <div class="lg:col-span-2 space-y-6">
+
+        <!-- USERS TABLE -->
+        <div class="bg-white p-8 rounded-2xl shadow">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold">Recent Users</h3>
+            <div class="flex items-center gap-2">
+              <input type="text" placeholder="Search user..." class="px-3 py-2 border rounded-lg text-sm" />
+              <button class="px-3 py-2 bg-green-500 text-white rounded-lg text-sm shadow">+ New</button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="text-sm text-black border-b bg-gray-50">
+                  <th class="p-3">Name</th>
+                  <th class="p-3">Email</th>
+                  <th class="p-3">Course</th>
+                  <th class="p-3">Status</th>
+                  <th class="p-3">Actions</th>
+                </tr>
+              </thead>
+
+              <tbody class="divide-y">
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3">Bob</td>
+                  <td class="p-3">bob@example.com</td>
+                  <td class="p-3">AI Fundamentals</td>
+                  <td class="p-3 text-green-600 font-semibold">Active</td>
+                  <td class="p-3">
+                    <button class="px-3 py-1 bg-blue-500 text-white rounded text-sm">View</button>
+                    <button class="px-3 py-1 bg-yellow-400 text-black rounded text-sm">Edit</button>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50">
+                  <td class="p-3">Mim</td>
+                  <td class="p-3">mim@example.com</td>
+                  <td class="p-3">Web Dev</td>
+                  <td class="p-3 text-yellow-600 font-semibold">Pending</td>
+                  <td class="p-3">
+                    <button class="px-3 py-1 bg-blue-500 text-white rounded text-sm">View</button>
+                    <button class="px-3 py-1 bg-yellow-400 text-black rounded text-sm">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- INSTRUCTOR LIST -->
+        <div class="bg-white p-7 rounded-2xl shadow">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-xl font-semibold">Instructors</h3>
+            <div class="flex items-center gap-2">
+              <input type="text" placeholder="Search instructor..." class="px-3 py-2 border rounded-lg text-sm" />
+              <button class="px-3 py-2 bg-indigo-600 text-white rounded-lg text-sm shadow">Approve</button>
+            </div>
+          </div>
+
+          <ul class="space-y-3">
+            <li class="flex items-center justify-between p-4 border rounded-xl hover:bg-gray-50 transition">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center font-semibold">TM</div>
+                <div>
+                  <p class="font-semibold">Tania Mia</p>
+                  <p class="text-sm text-black">Instructor • 5 courses</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="px-3 py-1 bg-green-500 text-white rounded text-sm">Message</button>
+                <button class="px-3 py-1 bg-red-500 text-white rounded text-sm">Block</button>
+              </div>
+            </li>
+
+            <li class="flex items-center justify-between p-4 border rounded-xl hover:bg-gray-50 transition">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center font-semibold">AR</div>
+                <div>
+                  <p class="font-semibold">Arif Rahman</p>
+                  <p class="text-sm text-black">Instructor • 3 courses</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <button class="px-3 py-1 bg-green-500 text-white rounded text-sm">Message</button>
+                <button class="px-3 py-1 bg-red-500 text-white rounded text-sm">Block</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <aside class="space-y-6">
+
+        <!-- PAYMENTS BOX -->
+        <div class="bg-white p-4 rounded-2xl shadow">
+          <h3 class="text-xl font-semibold mb-4">Payments Overview</h3>
+
+          <div class="text-sm text-black mb-4">Total Revenue: <span class="font-bold text-indigo-600">৳2,340,000</span></div>
+
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs text-black">Successful</p>
+                <p class="font-semibold">৳2,100,000</p>
+              </div>
+              <span class="text-green-600 font-bold">+8%</span>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs text-black">Pending</p>
+                <p class="font-semibold">৳120,000</p>
+              </div>
+              <span class="text-yellow-600 font-bold">-2%</span>
+            </div>
+
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-xs text-black">Refunds</p>
+                <p class="font-semibold">৳20,000</p>
+              </div>
+              <span class="text-red-600 font-bold">+1%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANALYTICS -->
+        <div class="bg-white p-6 rounded-2xl shadow">
+          <h3 class="text-xl font-semibold mb-4">Analytics</h3>
+
+          <svg viewBox="0 0 200 40" class="w-full h-12 mb-3">
+            <polyline fill="none" stroke="#6366f1" stroke-width="3"
+              points="0,30 30,18 60,22 90,10 120,14 150,6 180,12 200,8" />
+          </svg>
+
+          <div class="space-y-3 text-sm">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Web Dev</span><span>500</span>
+              </div>
+              <div class="w-full h-2 bg-gray-200 rounded-full">
+                <div class="h-2 bg-indigo-500 rounded-full" style="width:70%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Machine Learning</span><span>350</span>
+              </div>
+              <div class="w-full h-2 bg-gray-200 rounded-full">
+                <div class="h-2 bg-indigo-500 rounded-full" style="width:50%"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between mb-1">
+                <span>Data Science</span><span>300</span>
+              </div>
+              <div class="w-full h-2 bg-gray-200 rounded-full">
+                <div class="h-2 bg-indigo-500 rounded-full" style="width:45%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </aside>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="fixed inset-0 bg-black/40 hidden items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-6 w-full max-w-xl shadow-xl">
+    <div class="flex items-center justify-between mb-4">
+      <h4 class="text-xl font-semibold">Add / Edit Course</h4>
+      <button id="closeModal" class="text-gray-500 text-xl">✖</button>
+    </div>
+
+    <form class="space-y-4">
+      <div class="grid grid-cols-2 gap-4">
+        <input type="text" class="border rounded px-3 py-2" placeholder="Course Title" />
+        <input type="text" class="border rounded px-3 py-2" placeholder="Category" />
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <input type="number" class="border rounded px-3 py-2" placeholder="Price" />
+        <input type="number" class="border rounded px-3 py-2" placeholder="Duration (Months)" />
+      </div>
+
+      <textarea class="border w-full rounded px-3 py-2" placeholder="Write Description..."></textarea>
+
+      <div class="flex justify-end gap-3">
+        <button type="button" id="cancelModal" class="border px-4 py-2 rounded">Cancel</button>
+        <button class="px-4 py-2 bg-indigo-600 text-white rounded">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const sidebar = document.getElementById('sidebar');
+  const openSidebarBtn = document.getElementById('openSidebarBtn');
+  const collapseBtn = document.getElementById('collapseBtn');
+  const modal = document.getElementById('modal');
+  const addCourseBtn = document.getElementById('addCourseBtn');
+  const closeModal = document.getElementById('closeModal');
+  const cancelModal = document.getElementById('cancelModal');
+
+  openSidebarBtn?.addEventListener('click', () => sidebar.classList.toggle('-translate-x-full'));
+  collapseBtn?.addEventListener('click', () => sidebar.classList.add('-translate-x-full'));
+
+  const openModal = () => modal.classList.replace('hidden', 'flex');
+  const closeModalFn = () => modal.classList.replace('flex', 'hidden');
+
+  addCourseBtn?.addEventListener('click', openModal);
+  closeModal?.addEventListener('click', closeModalFn);
+  cancelModal?.addEventListener('click', closeModalFn);
+</script>
+
+</body>
+</html>
