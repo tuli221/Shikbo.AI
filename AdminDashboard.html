@@ -13,17 +13,17 @@
     ::-webkit-scrollbar-thumb { background: #4f46e5; border-radius: 10px; }
   </style>
 </head>
-<body class="bg-blue-100 text-black">
+<body class="bg-white text-black">
 
 <div class="min-h-screen flex">
 
   <!-- SIDEBAR -->
-  <aside id="sidebar" class="w-72 bg-blue-200 border-r shadow-lg p-6 space-y-6 fixed md:static inset-y-0 left-0 z-20 transform -translate-x-full md:translate-x-0 transition-all duration-300">
+  <aside id="sidebar" class="w-68 bg-white border-r shadow-lg p-6 space-y-6 fixed md:static inset-y-0 left-0 z-20 transform -translate-x-full md:translate-x-0 transition-all duration-300">
 
     <!-- Logo -->
     <div class="flex items-center justify-between">
       <a class="flex items-center gap-3">
-        <img src="./Shikbo.AI.png" class="h-10 rounded-md" />
+        <img src="./Shikbo.AI black (2).jpeg" class="h-10 rounded-md" />
       </a>
       <button id="collapseBtn" class="md:hidden text-gray-600 text-2xl">✖</button>
     </div>
@@ -38,7 +38,7 @@
       <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition"><span>📈</span>Analytics</a>
     </nav>
 
-    <button class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg py-2 transition" id="addCourseBtn">+ Add Course</button>
+    <button class="w-full bg-green-600 text-white font-semibold rounded-lg py-2 transition" id="addCourseBtn">+ Add Course</button>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -47,7 +47,6 @@
     <!-- TOP BAR -->
     <div class="flex items-center justify-between mb-8">
       <div class="flex items-center gap-4">
-        <button id="openSidebarBtn" class="md:hidden bg-white p-2 rounded-lg shadow">☰</button>
         <h2 class="text-3xl font-extrabold text-gray-800">Admin Dashboard</h2>
       </div>
 
@@ -61,25 +60,25 @@
 
     <!-- STATS CARDS -->
     <section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-      <div class="bg-gradient-to-r from-indigo-500 to-indigo-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
+      <div class="bg-gradient-to-r from-green-700 to-green-300 text-white p-5 rounded-2xl shadow-lg flex justify-between items-center">
         <div>
-          <p class="text-sm opacity-80">Active Students</p>
+          <p class="text-bold opacity-80">Active Students</p>
           <h3 class="text-3xl font-bold">5,432</h3>
         </div>
         <div class="text-4xl opacity-80">👥</div>
       </div>
 
-      <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
+      <div class="bg-gradient-to-r from-green-700 to-green-300 text-white p-5 rounded-2xl shadow-lg flex justify-between items-center">
         <div>
-          <p class="text-sm opacity-80">Courses</p>
+          <p class="text-bold opacity-80">Courses</p>
           <h3 class="text-3xl font-bold">12</h3>
         </div>
         <div class="text-4xl opacity-80">📚</div>
       </div>
 
-      <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
+      <div class="bg-gradient-to-r from-green-700 to-green-300 text-white p-5 rounded-2xl shadow-lg flex justify-between items-center">
         <div>
-          <p class="text-sm opacity-80">This Month Earnings</p>
+          <p class="text-bold opacity-80">This Month Earnings</p>
           <h3 class="text-3xl font-bold">৳380,000</h3>
         </div>
         <div class="text-4xl opacity-80">💳</div>
@@ -269,7 +268,7 @@
   <div class="bg-white rounded-2xl p-6 w-full max-w-xl shadow-xl">
     <div class="flex items-center justify-between mb-4">
       <h4 class="text-xl font-semibold">Add / Edit Course</h4>
-      <button id="closeModal" class="text-gray-500 text-xl">✖</button>
+      <button id="closeModal" class="text-black text-xl">✖</button>
     </div>
 
     <form class="space-y-4">
@@ -287,7 +286,7 @@
 
       <div class="flex justify-end gap-3">
         <button type="button" id="cancelModal" class="border px-4 py-2 rounded">Cancel</button>
-        <button class="px-4 py-2 bg-indigo-600 text-white rounded">Save</button>
+        <button class="px-4 py-2 bg-green-500 text-white rounded">Save</button>
       </div>
     </form>
   </div>

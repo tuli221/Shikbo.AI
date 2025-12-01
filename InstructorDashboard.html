@@ -6,85 +6,88 @@
   <title>Instructor Dashboard</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
-<body class="bg-blue-100 text-gray-800">
+<body class="bg-white text-gray-800">
+  <div class="flex">
+    <!-- SIDEBAR - On the LEFT side -->
+    <aside id="sidebar" class="w-68 bg-white border-r shadow-lg p-6 space-y-6 fixed md:static inset-y-0 left-0 z-20 transform -translate-x-full md:translate-x-0 transition-all duration-300">
+      <!-- Logo -->
+      <div class="flex items-center justify-between">
+        <a class="flex items-center gap-3">
+          <img src="./Shikbo.AI black (2).jpeg" class="h-10 rounded-md" />
+        </a>
+        <button id="collapseBtn" class="md:hidden text-gray-600 text-2xl">✖</button>
+      </div>
 
-  <!-- SIDEBAR -->
-  <div class="flex h-screen">
-    <aside class="w-64 bg-blue-200 shadow-lg p-5 space-y-6">
-<div class="flex items-center justify-between">
-   
-    <a href="#" class="inline-flex items-center gap-3">
-      <img src='./Shikbo.AI.png'alt="Shikbo.ai Logo" class="h-10 w-auto rounded-md" />
-    </a>
-     <button id="collapseBtn" class="md:hidden text-gray-300">✕</button>
-   </div>      
-  <nav class="space-y-3">
+      <!-- Nav Links -->
+      <nav class="space-y-1 text-black font-medium">
+        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition">
+          <span>📊</span>Dashboard
+        </a>
 
-  <a class="flex items-center gap-3 px-4 py-2 rounded-lg bg-indigo-500 text-white font-semibold" href="#">
-    Dashboard
-  </a>
+        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition">
+          <span>📚</span>My Courses
+        </a>
 
-  <a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-200" href="#">
-    <i class="fa-solid fa-book"></i>
-    My Courses
-  </a>
+        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition">
+          <span>➕</span>Create Course
+        </a>
 
-  <a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-200" href="#">
-    <i class="fa-solid fa-circle-plus"></i>
-    Create Course
-  </a>
+        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition">
+          <span>👨‍🎓</span>Students
+        </a>
 
-  <a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-200" href="#">
-    <i class="fa-solid fa-users"></i>
-    Students
-  </a>
+        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition">
+          <span>💳</span>Payments
+        </a>
 
-  <a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-200" href="#">
-    <i class="fa-solid fa-credit-card"></i>
-    Payments
-  </a>
+        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition">
+          <span>💬</span>Messages
+        </a>
 
-  <a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-200" href="#">
-    <i class="fa-solid fa-envelope"></i>   <!-- FIXED -->
-    Messages
-  </a>
-
-  <a class="flex items-center gap-3 px-4 py-2 rounded-lg hover:bg-gray-200" href="#">
-    <i class="fa-solid fa-gear"></i>
-    Settings
-  </a>
-
-</nav>
-
-
+        <a class="flex items-center gap-3 p-3 rounded-lg hover:bg-indigo-100 hover:text-indigo-600 transition">
+          <span>⚙️</span>Settings
+        </a>
+      </nav>
     </aside>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-1 p-10 overflow-y-auto">
-      <h2 class="text-3xl font-bold mb-6">Instructor Dashboard</h2>
+    <!-- MAIN CONTENT - On the RIGHT side of sidebar -->
+  <main class="flex-1 gap-2 p-6 md:p-10 ml-0 md:ml-6 transition-all duration-300">
+
+    <!-- TOP BAR -->
+    <div class="flex items-center justify-between mb-8">
+      <div class="flex items-center gap-4">
+        <h2 class="text-3xl font-extrabold text-gray-800">Instructor Dashboard</h2>
+      </div>
+
+      <div class="flex items-center gap-4 bg-white shadow-md px-4 py-1 rounded-full">
+        <div class="text-right">
+          <p class="font-semibold">Shikbo Instructor</p>
+        </div>
+        <img src="https://api.dicebear.com/6.x/initials/svg?seed=SI" class="w-10 h-10 rounded-full" />
+      </div>
+    </div>
 
       <!-- TOP STATS CARDS -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      <div class="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
-          <p class="text-white">Total Courses</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 ">
+        <div class="bg-gradient-to-r from-green-700 to-green-400 text-white p-8 rounded-2xl shadow-lg flex justify-between items-center">
+          <p class="text-white font-semibold">Total Courses</p>
           <h3 class="text-3xl font-bold">12</h3>
         </div>
 
-      <div class="bg-gradient-to-r from-green-500 to-green-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
-          <p class="text-white ">Total Students</p>
+        <div class="bg-gradient-to-r from-green-700 to-green-400 text-white p-8 rounded-2xl shadow-lg flex justify-between items-center">
+          <p class="text-white font-semibold ">Total Students</p>
           <h3 class="text-3xl font-bold">1,240</h3>
         </div>
 
-      <div class="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white p-6 rounded-2xl shadow-lg flex justify-between items-center">
-          <p class="text-white">Earnings</p>
+        <div class="bg-gradient-to-r from-green-700 to-green-400 text-white p-8 rounded-2xl shadow-lg flex justify-between items-center">
+          <p class="text-white font-semibold">Earnings</p>
           <h3 class="text-3xl font-bold">৳85,000</h3>
         </div>
       </div>
 
       <!-- RECENT COURSES -->
-      <div class="bg-white p-6 rounded-xl shadow-lg mb-8">
+      <div class="bg-#fbfbed p-6 rounded-xl shadow-lg mb-8">
         <h3 class="text-xl font-bold mb-4">My Recent Courses</h3>
         <table class="w-full text-left">
           <thead>
@@ -121,7 +124,7 @@
       </div>
 
       <!-- STUDENT ENGAGEMENT -->
-      <div class="bg-white p-6 rounded-xl shadow-lg">
+      <div class="bg-#fbfbed p-6 rounded-xl shadow-lg">
         <h3 class="text-xl font-bold mb-3">Student Engagement</h3>
         <p class="text-gray-600 mb-3">Last 7 days activity</p>
 
@@ -142,9 +145,29 @@
           </div>
         </div>
       </div>
-
     </main>
   </div>
 
+  <!-- Mobile Menu Toggle Button -->
+  <button id="menuToggle" class="md:hidden fixed bottom-4 left-4 bg-indigo-600 text-white p-3 rounded-full shadow-lg z-30">
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggle = document.getElementById('menuToggle');
+      const sidebar = document.getElementById('sidebar');
+      const collapseBtn = document.getElementById('collapseBtn');
+      
+      menuToggle.addEventListener('click', function() {
+        sidebar.classList.toggle('-translate-x-full');
+      });
+      
+      collapseBtn.addEventListener('click', function() {
+        sidebar.classList.add('-translate-x-full');
+      });
+    });
+  </script>
 </body>
 </html>

@@ -22,12 +22,12 @@
     /* ✅ Background image style */
   </style>
 </head>
-<body class="text-gray-800 font-sans bg-gradient-to-r from-emerald-950 via-emerald-950 to-emerald-950">
+<body class="text-gray-800 font-sans bg-gradient-to-r from-emerald-950 via-emerald-950 to-emerald-950"></body>
     <!-- Nav Section -->
   <nav class="flex justify-between items-center px-8 py-5 bg-white/80 shadow-md sticky top-0 z-50 backdrop-blur-sm">
     <h1 class="flex items-center text-2xl font-bold text-[var(--primary)] gap-3">
       <div class="max-w-9xl mx-auto">
-            <img src="Shikbo.AI.png"alt="Shikhbo.AI Logo" class="h-10">
+            <img src="download Shikbo.png"alt="Shikhbo.AI Logo" class="h-10">
             </div>
     </h1>
 
@@ -49,14 +49,16 @@ Discover courses designed to help you master the skills needed for your dream te
 
   </h1>
 </div>
- <<section class="bg-green-400 w-screen py-6 shadow-md rounded-2xl hover:border hover:border-white max-w-[1400px] mx-auto">
-  <div class="max-w-[800px] mx-auto px-6">
-    <div class="flex items-center bg-white rounded-full shadow-md px-4 py-3">
+ <<section class="bg-green-600 w-screen py-6 shadow-md rounded-2xl hover:border hover:border-green-white max-w-[1400px] mx-auto">
+  <div class="max-w-full  mx-auto px-6">
+    <div class="flex items-first bg-white hover:border hover:border-black rounded-full shadow-md px-4 py-3">
       <i class="fa-solid fa-magnifying-glass text-gray-500"></i>
       <input 
         type="text" 
         placeholder="Search courses, instructors, topics..." 
+        list="suggestions" id="course-search" autocomplete="off" onfocus="if(!document.getElementById('suggestions')){const d=document.createElement('datalist');d.id='suggestions';['Machine Learning Fundamentals','Data Science with Python','AI & Machine Learning','Web Development','Web Development with Mern'].forEach(t=>{const o=document.createElement('option');o.value=t;d.appendChild(o)});this.parentNode.insertBefore(d,this.nextSibling);}"
         class="w-full outline-none ml-3 text-gray-700"
+
       >
     </div>
     
@@ -69,13 +71,13 @@ Discover courses designed to help you master the skills needed for your dream te
 </section>
 
 <!-- ✅ Course Count -->
-<div class="text-white-100 mb-4 px-6 max-w-[1400px] mx-auto">
+<div class="text-white -mb-8 mt-2 px-6 max-w-[1400px] mx-auto">
   <p>Showing <span class="font-semibold">3</span> of 3 courses</p>
 </div>
 
 
 
-      <div class="max-w-7xl mx-auto p-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-10">
+      <div class="max-w-7xl mx-auto p-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-2">
 
         <!-- CARD 1 -->
         <div class="bg-[#11161b] rounded-2xl overflow-hidden shadow-lg border-2 border-green-500 hover:scale-[1.02] transition-all duration-300">
@@ -98,7 +100,7 @@ Discover courses designed to help you master the skills needed for your dream te
               <span>👩‍🎓 2500 students</span>
               <span>⭐ 4.8</span>
             </div>
-            <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center justify-between mb-2">
               <div>
                 <span class="text-3xl font-bold text-green-400">৳12,500</span>
                 <span class="text-gray-500 line-through ml-2">৳25,000</span>
@@ -181,6 +183,108 @@ Discover courses designed to help you master the skills needed for your dream te
               Details</button>
           </div>
         </div>
+        <!-- CARD 4 -->
+        <div class="bg-[#11161b] rounded-2xl overflow-hidden shadow-lg border-2 border-green-500 hover:scale-[1.02] transition-all duration-300">
+
+          <div class="relative">
+            <img src="download.jpeg" alt="React Laravel"
+              class="h-48 w-full object-cover opacity-80">
+            <span
+              class="absolute top-3 left-3 bg-yellow-500 text-black text-sm font-semibold px-3 py-1 rounded-full">Intermediate</span>
+            <span
+              class="absolute top-3 right-3 bg-green-500 text-black text-sm font-semibold px-3 py-1 rounded-full">Featured</span>
+          </div>
+          <div class="p-6">
+            <p class="text-green-400 text-sm font-semibold">Mern Web Development</p>
+            <h2 class="text-white font-bold mt-2 mb-3">Web Development with Mern</h2>
+            <p class="text-gray-400 text-sm mb-4">Master full-stack development with Mern.</p>
+            <div class="flex items-center text-gray-400 text-sm mb-4 space-x-4">
+              <span>🕓 6 months</span>
+              <span>👩‍🎓 500 students</span>
+              <span>⭐ 4.9</span>
+            </div>
+            <div class="flex items-center justify-between mb-2">
+              <div>
+                <span class="text-3xl font-bold text-green-400">৳12,500</span>
+                <span class="text-gray-500 line-through ml-2">৳25,000</span>
+              </div>
+              <span class="text-gray-400 text-sm">48 lessons</span>
+            </div>
+            <p class="text-sm text-gray-400 mb-3">50% off! One-time payment</p>
+            <button
+              class="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-3 rounded-xl transition">View
+              Details</button>
+          </div>
+        </div>
+        <!-- CARD 5 -->
+        <div class="bg-[#11161b] rounded-2xl overflow-hidden shadow-lg border-2 border-green-500 hover:scale-[1.02] transition-all duration-300">
+
+          <div class="relative">
+            <img src="Data-Analysis-With-Python.svg" alt="Machine Learning"
+              class="h-48 w-full object-cover opacity-80">
+            <span
+              class="absolute top-3 left-3 bg-red-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Advanced</span>
+            <span
+              class="absolute top-3 right-3 bg-green-500 text-black text-sm font-semibold px-3 py-1 rounded-full">Featured</span>
+          </div>
+          <div class="p-6">
+            <p class="text-green-400 text-sm font-semibold">AI & Machine Learning</p>
+            <h2 class="text-white font-bold mt-2 mb-3">Machine Learning Fundamentals</h2><br>
+            <p class="text-gray-400 text-sm mb-4">Learn the fundamentals of Machine Learning with Python. Master data
+              preprocessing, model training, and...</p>
+            <div class="flex items-center text-gray-400 text-sm mb-4 space-x-4">
+              <span>🕓 5 months</span>
+              <span>👩‍🎓 1800 students</span>
+              <span>⭐ 4.9</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-3xl font-bold text-green-400">৳15,000</span>
+                <span class="text-gray-500 line-through ml-2">৳30,000</span>
+              </div>
+              <span class="text-gray-400 text-sm">56 lessons</span>
+            </div>
+            <p class="text-sm text-gray-400 mb-3">50% off! One-time payment</p>
+            <button
+              class="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-3 rounded-xl transition">View
+              Details</button>
+          </div>
+        </div>
+        <!-- CARD 6 -->
+         <div class="bg-[#11161b] rounded-2xl overflow-hidden shadow-lg border-2 border-green-500 hover:scale-[1.02] transition-all duration-300">
+
+          <div class="relative">
+            <img src="Data-Analysis-With-Python.svg" alt="Machine Learning"
+              class="h-48 w-full object-cover opacity-80">
+            <span
+              class="absolute top-3 left-3 bg-red-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Advanced</span>
+            <span
+              class="absolute top-3 right-3 bg-green-500 text-black text-sm font-semibold px-3 py-1 rounded-full">Featured</span>
+          </div>
+          <div class="p-6">
+            <p class="text-green-400 text-sm font-semibold">AI & Machine Learning</p>
+            <h2 class="text-white font-bold mt-2 mb-3">Machine Learning Fundamentals</h2><br>
+            <p class="text-gray-400 text-sm mb-4">Learn the fundamentals of Machine Learning with Python. Master data
+              preprocessing, model training, and...</p>
+            <div class="flex items-center text-gray-400 text-sm mb-4 space-x-4">
+              <span>🕓 5 months</span>
+              <span>👩‍🎓 1800 students</span>
+              <span>⭐ 4.9</span>
+            </div>
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <span class="text-3xl font-bold text-green-400">৳15,000</span>
+                <span class="text-gray-500 line-through ml-2">৳30,000</span>
+              </div>
+              <span class="text-gray-400 text-sm">56 lessons</span>
+            </div>
+            <p class="text-sm text-gray-400 mb-3">50% off! One-time payment</p>
+            <button
+              class="w-full bg-green-500 hover:bg-green-600 text-black font-semibold py-3 rounded-xl transition">View
+              Details</button>
+          </div>
+        </div>
+
       </div>
       
     </div>
@@ -247,6 +351,18 @@ Discover courses designed to help you master the skills needed for your dream te
   <!-- Chat Button -->
   <button class="absolute bottom-6 right-6 bg-green-500 hover:bg-green-600 text-black p-4 rounded-full shadow-lg transition">
     <i class="fa-solid fa-comments text-xl"></i>
+    <span class="sr-only">Chat</span>
+    <script>
+    (function(){
+      const btn = document.currentScript && document.currentScript.parentElement;
+      if(!btn) return;
+      btn.classList.remove('absolute');
+      btn.classList.add('fixed');
+      btn.style.bottom = '1.5rem';
+      btn.style.right = '1.5rem';
+      btn.style.zIndex = '9999';
+    })();
+    </script>
   </button>
 </footer>
 

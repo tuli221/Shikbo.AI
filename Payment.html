@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shikhbo.AI — Payment</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{ --primary: #16a34a; --accent: #22c55e; }
+    body { background: #ffffff; }
+    .btn-bkash { background-color: #e2136e; }
+    .btn-bkash:hover { background-color: #c90f61; }
+    /* small card shadow */
+    .card-shadow { box-shadow: 0 12px 30px rgba(2,6,23,0.45); }
+    /* whatsapp floating */
+    .whatsapp-fab {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 56px;
+      height: 56px;
+      border-radius: 9999px;
+      background: #18a85a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 20px rgba(3, 102, 68, 0.25);
+      z-index: 60;
+    }
+  </style>
+</head>
+<body class="text-gray-800">
+
+  <!-- NAVBAR -->
+  <header class="bg-[#f5f5f5] border-b">
+    <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-4">
+        <!-- using uploaded image if needed -->
+        <img src="/mnt/data/69ea4051-85e6-43d4-89c0-64aa245c50c0.png" alt="Shikhbo.AI logo (upload preview)" class="h-10 object-contain" />
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-700">
+        <a href="#" class="hover:text-[var(--primary)]">Home</a>
+        <a href="#" class="hover:text-[var(--primary)]">Courses</a>
+        <a href="#" class="hover:text-[var(--primary)]">About</a>
+        <a href="#" class="hover:text-[var(--primary)]">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SELECT PAYMENT METHOD -->
+  <main class="max-w-6xl mx-auto px-6 py-10">
+    <div class="text-center">
+      <h2 class="text-xl md:text-2xl font-semibold mb-3">Select your Payment Method:</h2>
+
+      <div class="flex flex-col items-center gap-4 md:flex-row md:justify-center md:gap-6">
+        <button class="btn-bkash text-white font-semibold px-8 py-3 rounded-lg flex items-center gap-3">
+          <img src="./Bkash.webp" alt="bKash" class="w-16" />
+          Pay with bKash
+        </button>
+
+        <button class="bg-[#0D6EFD] text-white font-semibold px-8 py-3 rounded-lg flex items-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="white"><path d="M..." /></svg>
+          Pay with SSLCommerz
+        </button>
+      </div>
+    </div>
+
+    <!-- PAYMENT CARD -->
+    <div class="max-w-xl mx-auto mt-10">
+      <div class="bg-[#0f1b2d] text-white rounded-xl card-shadow p-8">
+        <h3 class="text-2xl font-semibold text-center">Payment Details</h3>
+        <p class="text-center text-gray-300 text-sm mb-6">Complete your purchase with bKash</p>
+
+        <!-- Price display -->
+        <label class="block text-sm mb-2 text-gray-300">Price</label>
+        <div class="w-full bg-[#1b2b45] px-4 py-3 rounded-lg mb-5">
+          <div class="flex justify-between items-center text-gray-300">
+            <span>Course fee</span>
+            <span class="font-medium">৳12500</span>
+          </div>
+        </div>
+
+        <!-- Partial payment -->
+        <label class="block text-sm mb-2 text-gray-300">Partial payment</label>
+        <input type="number" value="12500" id="partialPayment"
+               class="w-full px-4 py-3 rounded-md text-gray-900 mb-6" />
+
+        <!-- bKash PAY button -->
+        <button id="bkashPay" class="btn-bkash w-full text-white py-3 rounded-lg font-semibold flex items-center justify-center gap-3 text-lg">
+          <img src="https://seeklogo.com/images/B/bkash-logo-06994A14E1-seeklogo.com.png" class="w-6" alt="bKash" />
+          Pay
+        </button>
+
+        <p class="text-sm text-gray-300 text-center mt-4">🔒 Secure Payment Gateway · Your transaction is protected by SSL encryption</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- BOTTOM / CONTACT + MAP + VIDEO -->
+  <section class="max-w-7xl mx-auto px-6 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+
+      <!-- LEFT: contact info and map -->
+      <div class="bg-black text-white rounded-lg overflow-hidden">
+        <div class="px-8 py-10">
+          <h4 class="text-lg font-semibold mb-3">DHAKA HQ</h4>
+          <p class="text-gray-300 mb-4">
+            Whether you have a question about features, trials, pricing, need a demo, or anything else, our team is ready to answer all your questions.
+          </p>
+
+          <ul class="text-gray-200 space-y-3 mb-4">
+            <li class="flex items-center gap-3"><span class="text-green-400">✉️</span> codetreebd@gmail.com, razi@codetreebd.com</li>
+            <li class="flex items-center gap-3"><span class="text-green-400">📱</span> +88 0171-007-0606</li>
+            <li class="flex items-center gap-3"><span class="text-green-400">📍</span> Flat-3A, House 73/F, Road 12/B, Sector 10, Uttara Model Town, Dhaka-1230, Bangladesh.</li>
+          </ul>
+        </div>
+
+        <!-- embedded map (replace src with your live embed if desired) -->
+        <div class="w-full">
+          <iframe
+            class="w-full h-64 border-0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.1234567890123!2d90.39833!3d23.8600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0000000000000000!2sCODETREE!5e0!3m2!1sen!2sbd!4v1234567890"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <!-- RIGHT: large YouTube video / preview -->
+      <div class="bg-yellow-400 rounded-lg overflow-hidden">
+        <!-- if you want exact uploaded image/video preview use the uploaded file path -->
+        <!-- Using uploaded bottom screenshot for preview -->
+        <img src="/mnt/data/ea8b6c9c-fe2e-4132-b930-ce8a8ea67e1f.png" alt="video preview" class="w-full h-96 object-cover" />
+        <!-- Or embed the actual Youtube video -->
+        <!--
+        <iframe class="w-full h-96" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+        -->
+      </div>
+
+    </div>
+
+    <!-- Follow Us / Footer strip -->
+    <div class="mt-6 border-t pt-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="text-sm text-gray-600">Follow Us</div>
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-gray-700 hover:text-[var(--primary)]">Facebook</a>
+          <a href="#" class="text-gray-700 hover:text-[var(--primary)]">YouTube</a>
+          <a href="#" class="text-gray-700 hover:text-[var(--primary)]">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#0b0b0b] text-gray-300 py-8">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <h5 class="text-white font-semibold mb-2">Shikhbo.AI</h5>
+        <p class="text-sm">Empowering learners with AI-powered personalized tech education.</p>
+      </div>
+
+      <div>
+        <h5 class="text-white font-semibold mb-2">Quick Links</h5>
+        <ul class="text-sm space-y-2">
+          <li><a href="#" class="hover:text-white">About Us</a></li>
+          <li><a href="#" class="hover:text-white">Courses</a></li>
+          <li><a href="#" class="hover:text-white">Support</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-white font-semibold mb-2">Contact</h5>
+        <p class="text-sm">info@shikhboai.xyz · +8801339506981</p>
+        <p class="text-sm mt-2">Flat-3A, House 73/F, Road 12/B, Sector 10, Uttara Model Town, Dhaka-1230</p>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-800 mt-6 pt-6 text-center text-sm text-gray-500">
+      © 2025 Shikhbo.AI. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- WhatsApp floating -->
+  <a href="https://wa.me/8801710070606" target="_blank" class="whatsapp-fab" aria-label="WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M20.52 3.48A11.9 11.9 0 0012 1C6 1 1 6 1 12c0 2.12.56 4.09 1.62 5.82L1 23l4.35-1.14A11.93 11.93 0 0012 23c6 0 11-5 11-11 0-3.02-1.17-5.79-3.48-7.52z" fill="#075E54"/>
+      <path d="M17.5 14.5c-.4-.2-2.38-1.2-2.75-1.34-.37-.14-.64-.2-.9.2-.27.4-1.05 1.34-1.29 1.62-.24.27-.48.3-.88.1-.4-.2-1.7-.62-3.23-2a11.1 11.1 0 01-2-2.5c-.2-.4 0-.6.2-.8.2-.2.4-.48.6-.72.2-.24.27-.4.4-.6.13-.2.07-.4 0-.6-.07-.2-.9-2.18-1.24-2.98-.33-.8-.66-.64-.9-.64-.24 0-.5 0-.78 0-.27 0-.62.1-.94.5s-1.14 1.11-1.14 2.7c0 1.6 1.16 3.32 1.32 3.55.16.23 2 3.12 4.83 4.74 2.64 1.5 2.64 1.02 3.11 1 .47-.02 1.53-.62 1.75-1.22.22-.6.22-1.11.16-1.22-.07-.11-.28-.18-.68-.36z" fill="#fff"/>
+    </svg>
+  </a>
+
+  <!-- small helper scripts -->
+  <script>
+    // demo action for bKash button - replace with real redirect/POST
+    document.getElementById('bkashPay').addEventListener('click', function () {
+      const amt = document.getElementById('partialPayment').value || '12500';
+      // replace with your server endpoint that creates bKash payment session
+      alert('Demo: redirecting to bKash payment for ৳' + amt);
+      // e.g., window.location.href = '/payment/bkash/create?amount=' + amt;
+    });
+  </script>
+
+</body>
+</html>

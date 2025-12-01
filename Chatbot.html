@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot - Shikhbo.AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <!-- HEADER -->
+  <div class="bg-gradient-to-r from-green-950 via-green-200 to-green-100 text-white py-4 shadow-md h-16 flex items-center">
+  <a class="flex items-center justify-center gap-3 w-full">
+    <img src="./download Shikbo.png" class="h-10 rounded-md" />
+  </a>
+</div>
+
+  <!-- CHATBOX MAIN CARD -->
+  <div class="max-w-3xl mx-auto mt-6 bg-white shadow-lg rounded-2xl flex flex-col h-[80vh]">
+
+    <!-- CHAT MESSAGES -->
+    <div id="chatBox" class="flex-1 p-4 overflow-y-auto space-y-4">
+
+      <!-- AI WELCOME MESSAGE -->
+      <div class="flex items-start gap-3">
+        <div class="w-10 h-10 bg-green-800 text-white rounded-full flex items-center justify-center font-bold">
+          AI
+        </div>
+
+        <div class="bg-green-100 px-4 py-2 rounded-xl max-w-sm text-gray-800">
+          Hello 👋! I'm your AI assistant.  
+          How can I help you?        </div>
+      </div>
+
+    </div>
+
+    
+    <!-- DEMO QUESTION SUGGESTIONS (VERTICAL, SERIAL) -->
+    <div class="px-4 py-3 border-t bg-gray-50">
+      <div class="text-sm text-black mb-2 font-medium">Suggested Questions:</div>
+
+      <!-- Use a UL with list-none to remove the default dot -->
+      <ul class="list-none p-0 m-0 space-y-2">
+        <li>
+          <button onclick="sendSuggested('What course should I start for web development?')"
+            class="w-full text-left bg-green-100 border border-green-100 hover:bg-green-100 px-3 py-2 rounded-lg transition">
+            What course should I start for web development?
+          </button>
+        </li>
+
+        <li>
+          <button onclick="sendSuggested('Explain Machine Learning in simple words.')"
+            class="w-full text-left bg-green-100 border border-green-100 hover:bg-green-100 px-3 py-2 rounded-lg transition">
+            Explain Machine Learning in simple words.
+          </button>
+        </li>
+
+        <li>
+          <button onclick="sendSuggested('Give me a roadmap to become a data analyst.')"
+            class="w-full text-left bg-green-100 border border-green-100 hover:bg-green-100 px-3 py-2 rounded-lg transition">
+            Give me a roadmap to become a data analyst.
+          </button>
+        </li>
+
+        <li>
+          <button onclick="sendSuggested('Which course is best for beginners?')"
+            class="w-full text-left bg-green-100 border border-green-100 hover:bg-green-100 px-3 py-2 rounded-lg transition">
+            Which course is best for beginners?
+          </button>
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- INPUT AREA -->
+    <div class="p-4 border-t flex items-center gap-3">
+      <input 
+        id="userInput"
+        type="text"
+        placeholder="Type your message..."
+        class="flex-1 border rounded-xl px-4 py-3 focus:ring-2 focus:ring-blue-400"
+      />
+
+      <button 
+        onclick="sendMessage()"
+        class="bg-green-800 hover:bg-green-600 text-white px-5 py-3 rounded-xl font-semibold shadow-md">
+        Send
+      </button>
+    </div>
+
+  </div>
+
+  <!-- JS LOGIC -->
+  <script>
+
+    // SEND MESSAGE THAT USER TYPES
+    async function sendMessage() {
+      let input = document.getElementById("userInput");
+      let message = input.value.trim();
+      if (message === "") return;
+      showUserMessage(message);
+      input.value = "";
+      await sendToBackend(message);
+    }
+
+    // SEND SUGGESTED QUESTION
+    async function sendSuggested(text) {
+      showUserMessage(text);
+      await sendToBackend(text);
+    }
+
+    // SHOW USER MESSAGE ON SCREEN
+    function showUserMessage(text) {
+      let chatBox = document.getElementById("chatBox");
+      chatBox.innerHTML += `
+        <div class="flex items-start justify-end gap-3">
+          <div class="bg-green-700 text-white px-4 py-2 rounded-xl max-w-sm">
+            ${escapeHtml(text)}
+          </div>
+        </div>
+      `;
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    // SEND MESSAGE TO LARAVEL BACKEND
+    async function sendToBackend(message) {
+      let chatBox = document.getElementById("chatBox");
+
+      // show loading indicator
+      chatBox.innerHTML += `
+        <div id="typing" class="flex items-start gap-3">
+          <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">AI</div>
+          <div class="bg-gray-100 text-gray-800 px-4 py-2 rounded-xl max-w-sm">
+            <span class="animate-pulse">Typing...</span>
+          </div>
+        </div>
+      `;
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      try {
+        let response = await fetch("/api/chatbot", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+
+        let data = await response.json();
+
+        // remove typing indicator
+        let typingEl = document.getElementById("typing");
+        if (typingEl) typingEl.remove();
+
+        // append bot reply
+        chatBox.innerHTML += `
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+              AI
+            </div>
+            <div class="bg-gray-100 text-gray-800 px-4 py-2 rounded-xl max-w-sm">
+              ${escapeHtml(data.reply)}
+            </div>
+          </div>
+        `;
+        chatBox.scrollTop = chatBox.scrollHeight;
+
+      } catch (err) {
+        // remove typing indicator
+        let typingEl = document.getElementById("typing");
+        if (typingEl) typingEl.remove();
+
+        chatBox.innerHTML += `
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 bg-green-800 text-white rounded-full flex items-center justify-center font-bold">
+              AI
+            </div>
+            <div class="bg-red-50 text-red-700 px-4 py-2 rounded-xl max-w-sm">
+              Error: Could not reach the server.
+            </div>
+          </div>
+        `;
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+
+    // simple escape to avoid HTML injection
+    function escapeHtml(unsafe) {
+      return unsafe
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+  </script>
+
+</body>
+</html>
